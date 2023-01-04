@@ -56,6 +56,7 @@ Once cloned, run the following commands:
 <h2 id="endpoints"> Endpoints</h2>
 Create a new subscription.<br>
 POST /api/v1/#{customer.id}/subscriptions
+
 ```ruby
     "data": {
         "type": "subscriptions",
@@ -67,8 +68,10 @@ POST /api/v1/#{customer.id}/subscriptions
             "frequency": "quarterly"
         }
 ```
+
 Cancel a subscription.<br>
 PATCH /api/v1/#{customer.id}/subscriptions
+
 ```ruby
     "data": {
         "type": "subscriptions",
@@ -80,8 +83,10 @@ PATCH /api/v1/#{customer.id}/subscriptions
             "frequency": "quarterly"
         }
 ```
+
 Get all subscriptions, active and cancelled.<br>
 GET /api/v1/#{customer.id}/subscriptions
+
 ```ruby
     "data": {
         "type": "customers",
@@ -107,6 +112,7 @@ GET /api/v1/#{customer.id}/subscriptions
             ]
         }
 ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="testing"> Testing</h2>
