@@ -1,6 +1,6 @@
 [![Rails][rails]][rails-url] [![Postman][postman]][postman-url] [![Git][git]][git-url] [![Markdown][markdown]][markdown-url] [![PostgreSQL][postgreSQL]][postgresql-url] [![RSpec][rspec]][rspec-url] [![Visual Studio Code][visual studio code]][visual studio code-url]
 
- <h1>Tea Subscription Service</h4>
+<h1>Tea Subscription Service</h4>
 
 
 Tea Subscription Service is a Rails API where customers are able to subscribe, update, and cancel their tea subscription services.
@@ -16,7 +16,7 @@ Tea Subscription Service is a Rails API where customers are able to subscribe, u
     <li><a href="#installation"> Installation</a></li>
     <li><a href="#schema"> Schema</a></li>
     <li><a href="#endpoints"> API Endpoints</a></li>
-    <li><a href="#contributor"> Contributor</a></li>
+    <li><a href="#testing"> Testing</a></li>
   </ol>
 </details>
 
@@ -35,8 +35,7 @@ Tea Subscription Service is a Rails API where customers are able to subscribe, u
 </ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<h2 id="installation"> Installation </h2>
-
+<h2 id="installation">Installation</h2>
 To get started, clone the repo in your terminal by entering the following:
 
 <ul>
@@ -51,13 +50,11 @@ Once cloned, run the following commands:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="schema"> Schema</h2>
-
-<img width="487" alt="Database Schema" src="https://user-images.githubusercontent.com/98506079/210481457-369b7370-5730-4393-a2af-6ae7ce365f08.png">
+<img alt="Database Schema" src="https://user-images.githubusercontent.com/98506079/210481457-369b7370-5730-4393-a2af-6ae7ce365f08.png">
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="endpoints"> Endpoints</h2>
-
-Create a new subscription.
+Create a new subscription.<br>
 POST /api/v1/#{customer.id}/subscriptions
 ```ruby
     "data": {
@@ -70,7 +67,7 @@ POST /api/v1/#{customer.id}/subscriptions
             "frequency": "quarterly"
         }
 ```
-Cancel a subscription.
+Cancel a subscription.<br>
 PATCH /api/v1/#{customer.id}/subscriptions
 ```ruby
     "data": {
@@ -83,7 +80,7 @@ PATCH /api/v1/#{customer.id}/subscriptions
             "frequency": "quarterly"
         }
 ```
-Get all subscriptions, active and cancelled.
+Get all subscriptions, active and cancelled.<br>
 GET /api/v1/#{customer.id}/subscriptions
 ```ruby
     "data": {
@@ -112,12 +109,18 @@ GET /api/v1/#{customer.id}/subscriptions
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<h2 id="contributor"> Contributor</h2>
+<h2 id="testing"> Testing</h2>
+To run tests, enter the following command in your terminal:
+<ul>
+  <li>rails generate rspec:install</li>
+</ul>  
 
-<h3>Nicole Esquer</h3>
-
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nicole-esquer)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicole-esquer)
+To test coverage, run the following command in your terminal:
+<ul>
+  <li>bundle exec rspec</li>
+or
+  <li>open coverage/index.html</li>
+</ul> 
 
 [Rails]: https://camo.githubusercontent.com/1ab1a7ec3f2dd01c7960044047e96a86aed5111004c9b0b86e852eac461bedac/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f527562795f6f6e5f5261696c732d4343303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d727562792d6f6e2d7261696c73266c6f676f436f6c6f723d7768697465
 [rails-url]: https://guides.rubyonrails.org/
@@ -139,5 +142,4 @@ GET /api/v1/#{customer.id}/subscriptions
 
 [visual studio code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
 [visual studio code-url]: https://code.visualstudio.com/
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
