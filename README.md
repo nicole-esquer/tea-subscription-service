@@ -110,11 +110,6 @@ GET /api/v1/#{customer.id}/subscriptions
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="testing"> Testing</h2>
-To run tests, enter the following command in your terminal:
-<ul>
-  <li>rails generate rspec:install</li>
-</ul>  
-
 To test coverage, run the following command in your terminal:
 <ul>
   <li>bundle exec rspec</li>

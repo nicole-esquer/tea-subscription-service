@@ -27,7 +27,7 @@ RSpec.describe 'Update Subscription Status' do
       expect(results).to have_key(:data)
       expect(results[:data]).to have_key(:id)
       expect(results[:data]).to have_key(:type)
-      expect(results[:data][:type]).to eq('subscription')
+      expect(results[:data][:type]).to eq('subscriptions')
 
       expect(results[:data]).to have_key(:attributes)
       expect(results[:data][:attributes]).to have_key(:title)
@@ -52,15 +52,15 @@ RSpec.describe 'Update Subscription Status' do
 
       cancelled_params = {
         subscription_id: subscription.id,
-        status: 'cancelled'
+        status: ''
       }
 
       headers = { 'CONTENT_TYPE' => 'application/json' }
       patch '/api/v1/048750487503248952/subscriptions', headers: headers,
                                                         params: JSON.generate(cancelled_params)
 
-      # expect(response).to_not be_successful
-      # expect(response).to have_http_status(400)
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
     end
   end
 end

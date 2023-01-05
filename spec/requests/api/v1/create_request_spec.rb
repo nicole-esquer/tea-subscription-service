@@ -26,7 +26,7 @@ RSpec.describe 'Create new Subscriptions' do
       expect(results).to have_key(:data)
       expect(results[:data]).to have_key(:id)
       expect(results[:data]).to have_key(:type)
-      expect(results[:data][:type]).to eq('subscription')
+      expect(results[:data][:type]).to eq('subscriptions')
 
       expect(results[:data]).to have_key(:attributes)
       expect(results[:data][:attributes]).to have_key(:title)

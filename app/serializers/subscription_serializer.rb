@@ -1,9 +1,16 @@
 class SubscriptionSerializer
-  include JSONAPI::Serializer
-  set_type :subscription
-
-  attributes :title,
-             :price,
-             :status,
-             :frequency
+  def self.new(subscription)
+    {
+      data: {
+        type: "subscriptions",
+        id: subscription.id,
+        attributes: {
+          "title": subscription.title,
+          "price": subscription.price,
+          "status": subscription.status,
+          "frequency": subscription.frequency
+        }
+      }
+    }
+  end
 end

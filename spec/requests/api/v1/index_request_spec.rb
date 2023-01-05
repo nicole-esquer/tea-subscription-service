@@ -16,4 +16,17 @@ RSpec.describe 'Customer Subscription Index' do
       expect(results).to have_key(:data)
     end
   end
+
+  context 'sad path' do
+    it 'will return error if customer id cannot be found' do
+      get '/api/v1/80/subscriptions'
+
+      body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
+      expect(body).to have_key(:error)
+      expect(body[:error]).to eq('Invalid customer ID')
+    end
+  end
 end
